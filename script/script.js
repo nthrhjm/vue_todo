@@ -30,7 +30,23 @@ const app = new Vue({
 
         resetText() {
             this.text = '';
-        }
+        },
+        //DELETEボタンが押されたら該当するtodoを削除
+        deleteTodo(id) {
+            const index = this.getIndexBy(id);
+            this.todos.splice(index, 1);
+        },
+        //DONEとRETURNボタンが押されたら該当するtodoのisDone値を反転する
+        toggleIsDone(id) {
+            const index = this.getIndexBy(id);
+            this.todos[index].isDone = !this.todos[index].isDone;
+        },
+        //イベントハンドリングでクリックされたtodoのidを元にtodosのindexを調べて返す
+        getIndexBy(id) {
+            const filteredTodo = this.todos.filter(todo => todo.id === id)[0];
+            const index = this.todos.indexOf(filteredTodo);
+            return index;
+        },
     },
     computed: {
         doneTodo() {
