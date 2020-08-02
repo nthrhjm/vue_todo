@@ -32,7 +32,7 @@ body {
 
 .input-text {
     width: 500px;
-    font-size: 32px;
+    font-size: 24px;
     padding: 12px 20px;
     border-radius: 4px;
     -webkit-appearance: none;
@@ -41,13 +41,14 @@ body {
 }
 
 .add-button {
-    font-size: 32px;
+    font-size: 24px;
     padding: 12px 20px;
     border: none;
     -webkit-appearance: none;
     background: #F06292;
     color: #eee;
     border-radius: 4px;
+
 }
 /*todo一覧*/
 .list-area {
