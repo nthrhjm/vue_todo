@@ -31,5 +31,13 @@ const app = new Vue({
         resetText() {
             this.text = '';
         }
-    }
+    },
+    computed: {
+        doneTodo() {
+            return this.todos.filter(todo => todo.isDone === true);
+        },
+        incompleteTodo() {
+            return this.todos.filter(todo => todo.isDone === false);
+        },
+    },
 });
